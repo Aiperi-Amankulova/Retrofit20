@@ -5,13 +5,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
 
-    private var service : WeatherService? = null
+    private var weatherSer : WeatherService? = null
 
     fun getService() : WeatherService? {
-        if ( service == null )
-            service = buildRetrofit()
+        if ( weatherSer == null )
+            weatherSer = buildRetrofit()
 
-        return service
+        return weatherSer
     }
 
     private fun  buildRetrofit(): WeatherService {
@@ -28,5 +28,5 @@ object RetrofitBuilder {
 
     }
 
-    //pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={your api key}
+    // data/2.5/weather?q={city name}&appid={your api key}
 }

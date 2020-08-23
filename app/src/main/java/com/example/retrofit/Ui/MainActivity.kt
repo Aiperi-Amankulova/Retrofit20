@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retrofit.Data.RetrofitBuilder
 import com.example.retrofit.R
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
           ) {
             if (response.isSuccessful && response.body() != null ){
              val data = response.body()
-              weather.text = data?.main?.temp.toString()
+                textView.text = data?.main?.temp.toString()
               }
            }
         }

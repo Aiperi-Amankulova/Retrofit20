@@ -5,4 +5,13 @@
     <string name="api">d0042867490638534fd33e2ccbde2014</string>
     <string name="may_2019">May 2019</string>
     <string name="california_us">California, US</string>
+    <string name="now">Now</string>
+    <string name="today">Today</string>
+    <string name="_21">21°</string>
+    <string name="little_cloud">Little Cloud</string>
+    <string name="_28">28°</string>
+    <string name="max">Max</string>
+    <string name="_18">18°</string>
+    <string name="min">Min</string>
+    <string name="this_week">This week</string>
 </resources>
