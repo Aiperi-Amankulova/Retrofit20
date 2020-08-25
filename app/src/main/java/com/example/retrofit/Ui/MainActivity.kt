@@ -3,6 +3,7 @@ package com.example.retrofit.Ui
 import Json4Kotlin_Base
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.retrofit.Data.RetrofitBuilder
 import com.example.retrofit.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         RetrofitBuilder.getService()
-            ?.getWeather("Washington", getString(R.string.api))
+            ?.getWeather("Washington", getString(R.string.api),"Washington")
             ?.enqueue(object : Callback<Json4Kotlin_Base> {
                 override fun onFailure(call: Call<Json4Kotlin_Base>, t: Throwable) {
                 }
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 private fun formatDate() {
-                    val tv= SimpleDateFormat("d", Locale.getDefault())
+                    val tv = SimpleDateFormat("d", Locale.getDefault())
                     val date = Date()
                     val day = tv.format(date)
                     textView2.text = day
@@ -42,9 +43,23 @@ class MainActivity : AppCompatActivity() {
                     val month = sfdMonth.format(date)
                     textView3.text = month
                 }
-                )
-            }
-    }
-    }
 
-
+//                fun forecastWeather(city: String) {
+//                    RetrofitBuilder
+//                        .getService()?.forecast(city, getString(R.string.api), "metric")
+//                        ?.enqueue(object : Callback<ForcastModelOne> {
+//                            override fun onResponse(
+//                                call: Call<ForcastModelOne>,
+//                                response: Response<ForcastModelOne>
+//                            ) {
+//                                if (response.isSuccessful && response.body() != null) {
+//                                    adapter.update(response.body()?.list)
+//                                }
+//                            }
+//
+//                            override fun onFailure(call: Call<ForcastModelOne>, t: Throwable) {
+//                                Log.d("asyljansun", "ai")
+//                            }
+            })
+    }
+}
