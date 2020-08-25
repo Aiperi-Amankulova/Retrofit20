@@ -9,6 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,21 +18,33 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         RetrofitBuilder.getService()
-            ?.getWeather("Washington" , getString(R.string.api))
-            ?.enqueue(object : Callback<Json4Kotlin_Base>{
+            ?.getWeather("Washington", getString(R.string.api))
+            ?.enqueue(object : Callback<Json4Kotlin_Base> {
                 override fun onFailure(call: Call<Json4Kotlin_Base>, t: Throwable) {
                 }
 
-    override fun onResponse(
-        call: Call<Json4Kotlin_Base>,
-        response: Response<Json4Kotlin_Base>
-          ) {
-            if (response.isSuccessful && response.body() != null ){
-             val data = response.body()
-                textView.text = data?.main?.temp.toString()
-              }
-           }
-        }
-      )
-   }
-}
+                override fun onResponse(
+                    call: Call<Json4Kotlin_Base>,
+                    response: Response<Json4Kotlin_Base>
+                ) {
+                    if (response.isSuccessful && response.body() != null) {
+                        val data = response.body()
+                        textView.text = data?.main?.temp.toString()
+                    }
+                }
+
+                private fun formatDate() {
+                    val tv= SimpleDateFormat("d", Locale.getDefault())
+                    val date = Date()
+                    val day = tv.format(date)
+                    textView2.text = day
+                    val sfdMonth = SimpleDateFormat("MMMM\nyyyy", Locale.getDefault())
+                    val month = sfdMonth.format(date)
+                    textView3.text = month
+                }
+                )
+            }
+    }
+    }
+
+

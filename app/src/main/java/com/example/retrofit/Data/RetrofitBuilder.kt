@@ -14,7 +14,7 @@ object RetrofitBuilder {
         return weatherSer
     }
 
-    private fun  buildRetrofit(): WeatherService {
+    private fun  buildRetrofit() : WeatherService {
 
         val service =
             Retrofit.Builder()
@@ -28,5 +28,5 @@ object RetrofitBuilder {
 
     }
 
-    // data/2.5/weather?q={city name}&appid={your api key}
+
 }
