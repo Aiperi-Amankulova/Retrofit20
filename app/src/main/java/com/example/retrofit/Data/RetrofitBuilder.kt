@@ -14,17 +14,12 @@ object RetrofitBuilder {
             return weatherSer
         }
 
-        private fun  buildRetrofit(): WeatherService {     //делает запрос в интернет
-
-            val weatherSer =
-                Retrofit.Builder()
-                    .baseUrl("http://api.openweathermap.org/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                    .create(WeatherService:: class.java)
-
-
-            return weatherSer
+        private fun  buildRetrofit(): WeatherService {
+            return Retrofit.Builder()
+                .baseUrl("http://api.openweathermap.org/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(WeatherService:: class.java)
 
         }
 }
