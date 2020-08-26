@@ -5,26 +5,26 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
 
-        private var service : WeatherService? = null
+        private var weatherSer : WeatherService? = null
 
         fun getService() : WeatherService? {
-            if ( service == null )
-                service = buildRetrofit()
+            if ( weatherSer == null )
+                weatherSer = buildRetrofit()
 
-            return service
+            return weatherSer
         }
 
         private fun  buildRetrofit(): WeatherService {     //делает запрос в интернет
 
-            val service =
+            val weatherSer =
                 Retrofit.Builder()
-                        .baseUrl("http://api.openweathermap.org/")
+                    .baseUrl("http://api.openweathermap.org/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(WeatherService:: class.java)
 
 
-            return service
+            return weatherSer
 
         }
 }
