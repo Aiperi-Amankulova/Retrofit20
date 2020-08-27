@@ -5,21 +5,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
 
-        private var weatherSer : WeatherService? = null
+    private var wearherSer: WeatherService? = null
 
-        fun getService() : WeatherService? {
-            if ( weatherSer == null )
-                weatherSer = buildRetrofit()
+    fun getService(): WeatherService? {
+        if (wearherSer == null)
+            wearherSer =
+                buildRetrofit()
 
-            return weatherSer
-        }
+        return wearherSer
+    }
 
-        private fun  buildRetrofit(): WeatherService {
-            return Retrofit.Builder()
-                .baseUrl("http://api.openweathermap.org/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(WeatherService:: class.java)
+    private fun buildRetrofit(): WeatherService {
 
-        }
+        return Retrofit.Builder()
+            .baseUrl("http://api.openweathermap.org/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(WeatherService::class.java)
+    }
 }

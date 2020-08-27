@@ -1,9 +1,11 @@
 package com.example.retrofit.Ui
 
-import Json4Kotlin_Base
+import CurrentWeather
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import com.example.retrofit.Data.Model.Model
 import com.example.retrofit.Data.RetrofitBuilder
 import com.example.retrofit.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,52 +16,59 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         RetrofitBuilder.getService()
-            ?.getWeather("Washington", getString(R.string.api),"Washington")
-            ?.enqueue(object : Callback<Json4Kotlin_Base> {
-                override fun onFailure(call: Call<Json4Kotlin_Base>, t: Throwable) {
+            ?.getWeatherForecast("New York", getString(R.string.api), "metric")
+            ?.enqueue(object : Callback<CurrentWeather> {
+                override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 }
 
                 override fun onResponse(
-                    call: Call<Json4Kotlin_Base>,
-                    response: Response<Json4Kotlin_Base>
+                    call: Call<CurrentWeather>,
+                    response: Response<CurrentWeather>
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         val data = response.body()
                         textView.text = data?.main?.temp.toString()
                     }
                 }
+            })
 
-                private fun formatDate() {
-                    val tv = SimpleDateFormat("d", Locale.getDefault())
-                    val date = Date()
-                    val day = tv.format(date)
-                    textView2.text = day
-                    val sfdMonth = SimpleDateFormat("MMMM\nyyyy", Locale.getDefault())
-                    val month = sfdMonth.format(date)
-                    textView3.text = month
+    }
+
+    private fun formatDate() {
+        val tv = SimpleDateFormat("d", Locale.getDefault())
+        val date = Date()
+        val day = tv.format(date)
+        textView2.text = day
+        val sfdMonth = SimpleDateFormat("MMMM\nyyyy", Locale.getDefault())
+        val month = sfdMonth.format(date)
+        textView3.text = month
+    }
+
+    fun forecastWeather(city: String) {
+        RetrofitBuilder
+            .getService()?.getWeatherForecast(city, getString(R.string.api), "metric")
+            ?.enqueue(object : Callback<Model> {
+                override fun onResponse(
+                    call: Call<Model>,
+                    response: Response<Model>
+                ) {
+
                 }
 
-//                fun forecastWeather(city: String) {
-//                    RetrofitBuilder
-//                        .getService()?.forecast(city, getString(R.string.api), "metric")
-//                        ?.enqueue(object : Callback<ForcastModelOne> {
-//                            override fun onResponse(
-//                                call: Call<ForcastModelOne>,
-//                                response: Response<ForcastModelOne>
-//                            ) {
-//                                if (response.isSuccessful && response.body() != null) {
-//                                    adapter.update(response.body()?.list)
-//                                }
-//                            }
-//
-//                            override fun onFailure(call: Call<ForcastModelOne>, t: Throwable) {
-//                                Log.d("asyljansun", "ai")
-//                            }
+                override fun onFailure(call: Call<Model>, t: Throwable) {
+                    Log.d("kj", "jj")
+                }
             })
     }
 }
+
+private fun <T> Call<T>?.enqueue(callback: Callback<Model>) {
+
+}
+
