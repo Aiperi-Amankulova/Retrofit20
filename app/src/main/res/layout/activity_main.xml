@@ -114,8 +114,6 @@
                     app:layout_constraintVertical_bias="0.673" />
 
 
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
@@ -339,23 +337,100 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="17dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:text="@string/wind"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:layout_goneMarginTop="50dp" />
 
     <TextView
+        android:id="@+id/textView12"
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="40dp"
         android:text="@string/pressure"
         android:textColor="@android:color/black"
-        android:layout_marginLeft="196dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sw_4m_s"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/_1010mb"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="160dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/humidity"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/cloudiness"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        android:layout_marginLeft="196dp"/>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/_81"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="16dp"
+        android:text= "@string/_100"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 </androidx.constraintlayout.widget.ConstraintLayout>

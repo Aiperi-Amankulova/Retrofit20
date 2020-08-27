@@ -16,4 +16,10 @@
     <string name="this_week">This week</string>
     <string name="wind">Wind</string>
     <string name="pressure">Pressure</string>
+    <string name="sw_4m_s">SW_4m_s</string>
+    <string name="_1010mb">1010mb</string>
+    <string name="humidity">Humidity</string>
+    <string name="cloudiness">Cloudiness</string>
+    <string name="_81">81%</string>
+    <string name="_100">100%</string>
 </resources>

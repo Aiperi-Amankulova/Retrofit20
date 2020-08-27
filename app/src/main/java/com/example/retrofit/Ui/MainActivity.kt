@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         RetrofitBuilder.getService()
-            ?.getWeatherForecast("New York", getString(R.string.api), "metric")
+            ?.getWeatherForecast("Washington", getString(R.string.api), "metric")
             ?.enqueue(object : Callback<CurrentWeather> {
                 override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 }
