@@ -4,7 +4,6 @@ import CurrentWeather
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.example.retrofit.Data.Model.Model
 import com.example.retrofit.Data.RetrofitBuilder
 import com.example.retrofit.R
@@ -67,5 +66,4 @@ class MainActivity : AppCompatActivity() {
             })
     }
 }
-
 
