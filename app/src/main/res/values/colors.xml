@@ -6,4 +6,5 @@
 
     <color name="white">#FFFFFFFF</color>
     <color name="black">#000000</color>
+    <color name="view">#b2b2b2</color>
 </resources>

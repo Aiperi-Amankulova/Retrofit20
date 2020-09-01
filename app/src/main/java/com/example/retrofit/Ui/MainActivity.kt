@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         val data = response.body()
-                        textView.text = data?.main?.temp.toString()
+                        time.text = data?.main?.temp.toString()
                     }
                 }
             })
@@ -43,10 +43,10 @@ class MainActivity : AppCompatActivity() {
         val tv = SimpleDateFormat("d", Locale.getDefault())
         val date = Date()
         val day = tv.format(date)
-        textView2.text = day
+        number.text = day
         val sfdMonth = SimpleDateFormat("MMMM\nyyyy", Locale.getDefault())
         val month = sfdMonth.format(date)
-        textView3.text = month
+        calendarDay.text = month
     }
 
     fun forecastWeather(city: String) {
