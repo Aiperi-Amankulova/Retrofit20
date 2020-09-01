@@ -67,3 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+private fun <T> Call<T>?.enqueue(callback: Callback<Model>) {
+    TODO("Not yet implemented")
+}
+
