@@ -22,4 +22,11 @@
     <string name="cloudiness">Cloudiness</string>
     <string name="_81">81%</string>
     <string name="_100">100%</string>
+    <string name="_30">30</string>
+    <string name="_28_n17">28\n17</string>
+    <string name="may_n2019">May\n2019</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="_06_00">06:00</string>
+    <string name="sunset">Sunset</string>
+    <string name="_20_31">20:31</string>
 </resources>
