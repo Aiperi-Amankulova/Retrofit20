@@ -9,8 +9,7 @@ object RetrofitBuilder {
 
     fun getService(): WeatherService? {
         if (wearherSer == null)
-            wearherSer =
-                buildRetrofit()
+            wearherSer = buildRetrofit()
 
         return wearherSer
     }
